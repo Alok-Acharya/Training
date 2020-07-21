@@ -1,18 +1,18 @@
-bool checkbpm(float)
+bool checkbpm(float bpm)
 {
   if(bpm < 70 || bpm > 150) {
     return false;
   }
   return true;
 }
-bool checkspo2(float)
+bool checkspo2(float spo2)
 {
   if(spo2 < 80) {
     return false;
   }
   return true;
 }
-bool checkrespRate(float)
+bool checkrespRate(float respRate)
 {
   if(respRate < 30 || respRate > 60) {
     return false;
