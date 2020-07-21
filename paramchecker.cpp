@@ -1,27 +1,19 @@
-bool checkbpm(float bpm)
+
+bool paramChecker(float param , float lowerlimit , float higherlimit)
 {
-  if(bpm < 70 || bpm > 150) {
-    return false;
-  }
-  return true;
+   if(param < lowerlimit || param > higherlimit)
+   {
+      return false;
+   }
+   return true;
 }
-bool checkspo2(float spo2)
-{
-  if(spo2 < 80) {
-    return false;
-  }
-  return true;
-}
-bool checkrespRate(float respRate)
-{
-  if(respRate < 30 || respRate > 60) {
-    return false;
-  }
-  return true;
-}
+
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  if(checkbpm(bpm)&&checkspo2(spo2)&&checkrespRate(respRate)){
-  return true;
+  bool bpm = paramChecker(bpm,70,150);
+  bool spo2 = paramchecker(spo2,80,100);
+  bool resprate = paramchecker(respRate,30,60);
+  if(bpm && spo2 && resprate){
+      return true;
   }
-  return false;
+  return false; 
 }
