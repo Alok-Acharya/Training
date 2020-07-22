@@ -10,8 +10,6 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
    bool spo2OK = paramChecker(spo2,80,100);
    bool resprateOK = paramChecker(respRate,30,60);
   
-   if(bpmOK && spo2OK && resprateOK){
-      return true;
-   }
-   return false; 
+   return(bpmOK && spo2OK && resprateOK);
+ 
 }
