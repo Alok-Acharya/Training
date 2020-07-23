@@ -1,2 +1,2 @@
-
-bool vitalsAreOk(float *params);
+#include<vector>
+bool vitalsAreOk(vector<float>param);
