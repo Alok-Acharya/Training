@@ -1,2 +1,2 @@
 #include<vector>
-bool vitalsAreOk(vector<float>param);
+bool vitalsAreOk(std::vector<float>param);
