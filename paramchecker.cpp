@@ -17,7 +17,7 @@ class paramChecker
 class Bpm : public paramChecker
 {
    public:
-   Bpm(float bpm)
+   explicit Bpm(float bpm)
    {
 	 param = bpm;
 	 lowerlimit = 70;
@@ -29,7 +29,7 @@ class Bpm : public paramChecker
 class Spo2 : public paramChecker
 {
    public:
-   Spo2(float spo2)
+   explicit Spo2(float spo2)
    {
 	 param = spo2;
 	 lowerlimit = 80;
@@ -41,7 +41,7 @@ class Spo2 : public paramChecker
 class RespRate : public paramChecker
 {
    public:
-   RespRate(float resprate)
+   explicit RespRate(float resprate)
    {
 	 param = resprate;
 	 lowerlimit = 30;
