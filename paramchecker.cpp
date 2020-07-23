@@ -1,4 +1,4 @@
-
+#include "paramchecker.h"
 
 float param;
 float lowerlimit;
