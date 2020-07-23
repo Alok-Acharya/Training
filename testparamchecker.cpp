@@ -2,11 +2,19 @@
 #include <gtest/gtest.h>
  
 TEST(VitalsTest, BPM) { 
-    ASSERT_EQ(true, vitalsAreOk(100, 100, 50));
+    std::vector<float>vitals;
+    vitals.push_back(100);
+    vitals.push_back(100);
+    vitals.push_back(50);
+    ASSERT_EQ(true, vitalsAreOk(vitals));
 }
  
 TEST(VitalsTest, SPO2) {
-    ASSERT_EQ(false, vitalsAreOk(100, 40, 50));
+    std::vector<float>vitals;
+    vitals.push_back(100);
+    vitals.push_back(40);
+    vitals.push_back(50);
+    ASSERT_EQ(false, vitalsAreOk(vitals));
 }
  
 int main(int argc, char **argv) {
