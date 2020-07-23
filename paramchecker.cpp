@@ -1,5 +1,5 @@
 #include "paramchecker.h"
-
+usine namespace std;
 float param;
 float lowerlimit;
 float upperlimit;
