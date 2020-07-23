@@ -51,7 +51,7 @@ class RespRate : public paramChecker
 };
 
 
-bool vitalsAreOk(vector<float>parm) {
+bool vitalsAreOk(std::vector< float >parm) {
    paramChecker *obj1 = new Bpm(parm[0]);
    bool bpmOk = obj1->IsParamOK();
    paramChecker *obj2 = new Spo2(parm[1]);
