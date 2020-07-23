@@ -6,7 +6,7 @@ float upperlimit;
 class paramChecker
 {
 	public:
-	paramChecker(){
+	paramChecker(){}
 	virtual ~paramChecker(){}
 	bool IsParamOK()
 	{
