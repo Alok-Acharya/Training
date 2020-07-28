@@ -12,7 +12,7 @@ TEST(VitalsTest, BPM) {
 TEST(VitalsTest, SPO2) {
     std::vector<float>vitals;
     vitals.push_back(100);
-    vitals.push_back(40);
+    vitals.push_back(90);
     vitals.push_back(50);
     ASSERT_EQ(false, vitalsAreOk(vitals));
 }
