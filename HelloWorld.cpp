@@ -4,3 +4,9 @@ void print()
 {
   cout<<"Hello World !";
 }
+
+int main()
+{
+  print();
+  return 0;
+}
