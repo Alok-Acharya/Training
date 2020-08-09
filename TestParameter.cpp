@@ -3,50 +3,50 @@
 #include  "OperationDuration.h"
 #include  <gtest/gtest.h>
  
-TEST(OperatingTempreture , tempreture) { 
+TEST(OperatingTempreture , input) { 
     OperatingTempreture  tempreture;
     ASSERT_EQ(true, tempreture.validateOperatingTempreture(30.2));
 }
  
-TEST(OperatingTempreture , tempreture) { 
+TEST(OperatingTempreture , input) { 
     OperatingTempreture  tempreture;
     ASSERT_EQ(true, tempreture.validateOperatingTempreture(35.0));
 }
 
-TEST(OperatingTempreture , variation) { 
+TEST(OperatingTempreture , input) { 
     OperatingTempreture tempreture;
     ASSERT_EQ(false, tempreture.validateOperatingTempreture(35.9));
 }
  
  
-TEST(PartDimension, variarion) { 
+TEST(PartDimension, input) { 
      PartDimension variaton;
     ASSERT_EQ(true, variaton.validatePartDimensionVariation(0.02));
 }
 
  
-TEST(PartDimension, variarion) { 
+TEST(PartDimension, input) { 
      PartDimension variaton;
     ASSERT_EQ(true, variaton.validatePartDimensionVariation(0.05));
 }
 
  
-TEST(PartDimension, variarion) { 
+TEST(PartDimension, input) { 
      PartDimension variaton;
     ASSERT_EQ(false, variaton.validatePartDimensionVariation(0.5));
 }
 
-TEST(OperationDuration, duration) { 
+TEST(OperationDuration, input) { 
     OperationDuration duration;
     ASSERT_EQ(true, duration.checkContineousOperationDuration(0.02));
 }
 
-TEST(OperationDuration, duration) { 
+TEST(OperationDuration, input) { 
      OperationDuration duration;
     ASSERT_EQ(true, variaton.checkContineousOperationDuration(6.0));
 }
 
-TEST(OperationDuration, duration) { 
+TEST(OperationDuration, input) { 
      OperationDuration duration;
     ASSERT_EQ(false, variaton.checkContineousOperationDuration(7));
 }
