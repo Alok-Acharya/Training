@@ -19,7 +19,7 @@ bool OperatingTempreture::validateOperatingTempreture(float tempreture)
 	
 	    if(validatetempreture->IsDataOK(tempreture, Operating_Tempreture_Threshold))
 	    {	
-	    	retun true;
+	    	return true;
 	    }
 	    else
 	    {
