@@ -8,11 +8,6 @@
 
 using namespace std;
 
-bool IsDataOK(float data , float thresholdvalue)
-{
-	return(!(data > thresholdvalue));		
-}
-
 class OperationDuration
 {
     public:
