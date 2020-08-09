@@ -3,7 +3,7 @@
 #include  "OperationDuration.h"
 #include  <gtest/gtest.h>
  
-TEST(OperatingTempreture , input_valid) { invalid
+TEST(OperatingTempreture , input_valid) { 
     OperatingTempreture  tempreture;
     ASSERT_EQ(true, tempreture.validateOperatingTempreture(30.2));
 }
