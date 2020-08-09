@@ -13,7 +13,7 @@ class PartDimension
 {
     public:
 	PartDimension();
-    virtual ~PartDimension();
+       virtual ~PartDimension();
 	bool validatePartDimensionVariation(float);
     private:
        INotify *machinefailure;
