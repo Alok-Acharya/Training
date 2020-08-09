@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class OperationDuration
+class OperationDuration:public IValidator
 {
     public:
 	OperationDuration();
