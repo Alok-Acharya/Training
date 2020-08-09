@@ -15,7 +15,7 @@ class OperatingTempreture:public IValidator
     public:
 	OperatingTempreture();
     virtual ~OperatingTempreture();
-	void validateOperatingTempreture(float);
+	bool validateOperatingTempreture(float);
     private:
        INotify *enviornmentfailure;
 	   IValidator *validatetempreture;
