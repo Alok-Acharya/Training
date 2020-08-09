@@ -15,16 +15,17 @@ OperationDuration::~OperationDuration()
 }
 
 
-void OperationDuration::checkContineousOperationDuration(float duration)
+bool OperationDuration::checkContineousOperationDuration(float duration)
 {
 	
 	 if(validateDuration->IsDataOK( duration, Operation_Duration_Threshold))
 	 {	
-	    	cout<<"Data OK "<<endl;
+	    	return true;
 	 }
 	 else
 	 {
-		  cout<<"Machine_NOT_OK " <<endl;
-		  machinefailure->Notification();
+		 cout<<"Machine_NOT_OK " <<endl;
+		 machinefailure->Notification();
+		 return false;
 	 }
 }
