@@ -14,7 +14,7 @@ class PartDimension
     public:
 	PartDimension();
     virtual ~PartDimension();
-	void validatePartDimensionVariation(float);
+	bool validatePartDimensionVariation(float);
     private:
        INotify *machinefailure;
 	   IValidator *validatePartDimension;
