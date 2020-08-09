@@ -59,7 +59,7 @@ TEST(SelfTestStatus, input_valid) {
  
 TEST(SelfTestStatus, input_invalid) { 
      SelfTestStatus selfteststatus;
-    ASSERT_EQ(true, selfteststatus.ValidateStatusCode(0x02));
+    ASSERT_EQ(false, selfteststatus.ValidateStatusCode(0x02));
 }
 
  
