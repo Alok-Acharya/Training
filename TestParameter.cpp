@@ -36,17 +36,17 @@ TEST(PartDimension, input) {
     ASSERT_EQ(false, variaton.validatePartDimensionVariation(0.5));
 }
 
-TEST(OperationDuration, input) { 
+TEST(OperationDuration, input_valid) { 
     OperationDuration duration;
     ASSERT_EQ(true, duration.checkContineousOperationDuration(0.02));
 }
 
-TEST(OperationDuration, input) { 
+TEST(OperationDuration, input_equal) { 
      OperationDuration duration;
     ASSERT_EQ(true, variaton.checkContineousOperationDuration(6.0));
 }
 
-TEST(OperationDuration, input) { 
+TEST(OperationDuration, input_invalid) { 
      OperationDuration duration;
     ASSERT_EQ(false, variaton.checkContineousOperationDuration(7));
 }
