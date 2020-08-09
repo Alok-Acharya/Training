@@ -3,35 +3,35 @@
 #include  "OperationDuration.h"
 #include  <gtest/gtest.h>
  
-TEST(OperatingTempreture, tempreture) { 
-    OperatingTempreture tempreture;
+TEST(OperatingTempreture , tempreture) { 
+    OperatingTempreture  tempreture;
     ASSERT_EQ(true, tempreture.validateOperatingTempreture(30.2));
 }
  
-TEST(OperatingTempreture, tempreture) { 
-    OperatingTempreture tempreture;
+TEST(OperatingTempreture , tempreture) { 
+    OperatingTempreture  tempreture;
     ASSERT_EQ(true, tempreture.validateOperatingTempreture(35.0));
 }
 
-TEST(OperatingTempreture, variation) { 
+TEST(OperatingTempreture , variation) { 
     OperatingTempreture tempreture;
     ASSERT_EQ(false, tempreture.validateOperatingTempreture(35.9));
 }
  
  
-TEST(PartDimensionVariation, variarion) { 
+TEST(PartDimension, variarion) { 
      PartDimension variaton;
     ASSERT_EQ(true, variaton.validatePartDimensionVariation(0.02));
 }
 
  
-TEST(PartDimensionVariation, variarion) { 
+TEST(PartDimension, variarion) { 
      PartDimension variaton;
     ASSERT_EQ(true, variaton.validatePartDimensionVariation(0.05));
 }
 
  
-TEST(PartDimensionVariation, variarion) { 
+TEST(PartDimension, variarion) { 
      PartDimension variaton;
     ASSERT_EQ(false, variaton.validatePartDimensionVariation(0.5));
 }
