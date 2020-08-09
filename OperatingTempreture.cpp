@@ -14,16 +14,17 @@ OperatingTempreture::~OperatingTempreture()
 }
 
 
-void OperatingTempreture::validateOperatingTempreture(float tempreture)
+bool OperatingTempreture::validateOperatingTempreture(float tempreture)
 {
 	
 	    if(validatetempreture->IsDataOK(tempreture, Operating_Tempreture_Threshold))
 	    {	
-	    	cout<<"Data OK "<<endl;
+	    	retun true;
 	    }
 	    else
 	    {
 		cout<<"Enviornment_Not_OK " <<endl;
 		enviornmentfailure->Notification();
+		 return false;
 	    }
 }
