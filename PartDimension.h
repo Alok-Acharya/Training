@@ -9,7 +9,7 @@ using namespace std;
 
 #define Part_Dimension_Variation_Threshold 0.05 //in mm
 
-class PartDimension
+class PartDimension:public IValidator
 {
     public:
 	PartDimension();
@@ -17,7 +17,7 @@ class PartDimension
 	bool validatePartDimensionVariation(float);
     private:
        INotify *machinefailure;
-	   IValidator *validatePartDimension;
+       IValidator *validatePartDimension;
 
 };
 #endif
