@@ -11,8 +11,8 @@ using namespace std;
 class OperationDuration
 {
     public:
-	explicit OperationDuration();
-    virtual ~OperationDuration();
+	OperationDuration();
+        virtual ~OperationDuration();
 	bool checkContineousOperationDuration(float);
     private:
 	 INotify* machinefailure;
