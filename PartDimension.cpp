@@ -12,16 +12,16 @@ PartDimension::~PartDimension()
 	delete validatePartDimension;
 }
 		 
-void PartDimension::validatePartDimensionVariation(float dimensionVariation)
-{
-	
+bool PartDimension::validatePartDimensionVariation(float dimensionVariation)
+{	
 	if(validatePartDimension->IsDataOK(dimensionVariation, Part_Dimension_Variation_Threshold))
 	{	
-	    	cout<<"Data OK "<<endl;
+	    	return true;
 	}
 	else
 	{
 	  	cout<<"Machine_NOT_OK " <<endl;
-		  machinefailure->Notification();
+		 machinefailure->Notification();
+		return false;
 	 }
 }
