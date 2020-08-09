@@ -1,6 +1,7 @@
 #include "OperatingTempreture.h"
 #include  "PartDimension.h"
 #include  "OperationDuration.h"
+#include "SelfTestStatus.h"
 #include  <gtest/gtest.h>
  
 TEST(OperatingTempreture , input_valid) { 
@@ -50,7 +51,16 @@ TEST(OperationDuration, input_invalid) {
      OperationDuration duration;
     ASSERT_EQ(false, duration.checkContineousOperationDuration(7));
 }
+
+TEST(SelfTestStatus, input_valid) { 
+     SelfTestStatus selfteststatus;
+    ASSERT_EQ(true, selfteststatus.ValidateStatusCode(0xFF));
+}
  
+TEST(SelfTestStatus, input_invalid) { 
+     SelfTestStatus selfteststatus;
+    ASSERT_EQ(true, selfteststatus.ValidateStatusCode(0x02));
+}
 
  
 int main(int argc, char **argv) {
