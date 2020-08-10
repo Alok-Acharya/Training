@@ -4,6 +4,12 @@ SelfTestStatus::SelfTestStatus()
     machinefailure = new MachineFailure();
 }
 
+SelfTestStatus::SelfTestStatus(const SelfTestStatus& obj)
+{
+    machinefailure = new MachineFailure();
+}
+
+
 SelfTestStatus::~SelfTestStatus()
 {
    delete machinefailure;
