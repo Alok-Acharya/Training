@@ -3,6 +3,14 @@
 
 #include<iostream>
 
+enum StatusCode
+{
+   No_Data,
+   Controller_Board_Not_OK,
+   Configuration_Data_Corrupted,
+   ALL_OK = 0xFF	
+};
+
 using namespace std;
 
 class SelfTestStatus
