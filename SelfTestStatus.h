@@ -2,6 +2,7 @@
 #define _SELF_TEST_STATUS_H_
 
 #include<iostream>
+#include "MachineFailureNotification.h"
 
 enum StatusCode
 {
@@ -16,9 +17,11 @@ using namespace std;
 class SelfTestStatus
 {
     public:
-	SelfTestStatus(){}
-    virtual ~SelfTestStatus(){}
+	SelfTestStatus();
+        virtual ~SelfTestStatus();
 	bool ValidateStatusCode(float);
+    private:
+	INotify *machinefailure;
 
 };
 #endif
