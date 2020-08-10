@@ -1,14 +1,25 @@
 #include "SelfTestStatus.h"
+SelfTestStatus::SelfTestStatus()
+{
+    machinefailure = new MachineFailure();
+}
+
+SelfTestStatus::~SelfTestStatus()
+{
+   delete machinefailure;
+}
+
 
 bool SelfTestStatus::ValidateStatusCode(float statuscode)
 {
-    if(statuscode == 0xFF)
+    if(statuscode == ALL_OK)
     {
-		cout<<"ALL OK" <<endl;
-		return true;
+	cout<<"ALL OK" <<endl;
+	return true;
     }
     else 
     {	
-		return false;	
+	machinefailure->Notification();
+	return false;	
     }
 }
