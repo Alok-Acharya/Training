@@ -13,11 +13,12 @@ enum StatusCode
 };
 
 using namespace std;
-
+ 
 class SelfTestStatus
 {
     public:
 	SelfTestStatus();
+	SelfTestStatus(const SelfTestStatus& );
         virtual ~SelfTestStatus();
 	bool ValidateStatusCode(float);
     private:
