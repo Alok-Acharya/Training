@@ -17,7 +17,7 @@ class PartDimension:public IValidator
 	bool validatePartDimensionVariation(float);
     private:
        INotify *machinefailure;
-       IValidator *validatePartDimension;
+ 
 
 };
 #endif
