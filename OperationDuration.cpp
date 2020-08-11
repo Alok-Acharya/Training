@@ -12,6 +12,10 @@ OperationDuration::~OperationDuration()
 	delete machinefailure;
 }
 
+void OperationDuration::handleOperationDurationUpdate(float duration)
+{
+      checkContineousOperationDuration(duration);
+}
 
 bool OperationDuration::checkContineousOperationDuration(float duration)
 {
