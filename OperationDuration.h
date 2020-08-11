@@ -16,7 +16,6 @@ class OperationDuration:public IValidator
 	bool checkContineousOperationDuration(float);
     private:
 	 INotify* machinefailure;
-	 IValidator* validateDuration;
 
 };
 #endif
