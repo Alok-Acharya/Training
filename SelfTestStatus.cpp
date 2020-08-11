@@ -15,6 +15,10 @@ SelfTestStatus::~SelfTestStatus()
    delete machinefailure;
 }
 
+void SelfTestStatus::handleSelfTestStatusCodeUpdate(float statuscode)
+{
+   ValidateStatusCode(statuscode);
+}
 
 bool SelfTestStatus::ValidateStatusCode(float statuscode)
 {
