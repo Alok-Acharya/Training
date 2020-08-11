@@ -13,6 +13,7 @@ class OperationDuration:public IValidator
     public:
 	OperationDuration();
         virtual ~OperationDuration();
+	void handleOperationDurationUpdate(float);
 	bool checkContineousOperationDuration(float);
     private:
 	 INotify* machinefailure;
