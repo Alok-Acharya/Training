@@ -15,7 +15,8 @@ class OperatingTempreture
     public:
 	OperatingTempreture();
 	OperatingTempreture(const OperatingTempreture&);
-    virtual ~OperatingTempreture();
+        virtual ~OperatingTempreture();
+	void handleOperatingTempretureUpdate(float);
 	bool validateOperatingTempreture(float);
     private:
        INotify *enviornmentfailure;
