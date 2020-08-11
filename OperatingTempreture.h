@@ -10,7 +10,7 @@ using namespace std;
 
 
 
-class OperatingTempreture:public IValidator
+class OperatingTempreture
 {
     public:
 	OperatingTempreture();
@@ -18,7 +18,5 @@ class OperatingTempreture:public IValidator
 	bool validateOperatingTempreture(float);
     private:
        INotify *enviornmentfailure;
-	   IValidator *validatetempreture;
-
 };
 #endif
