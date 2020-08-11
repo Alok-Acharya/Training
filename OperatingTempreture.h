@@ -14,6 +14,7 @@ class OperatingTempreture
 {
     public:
 	OperatingTempreture();
+	OperatingTempreture(const OperatingTempreture&);
     virtual ~OperatingTempreture();
 	bool validateOperatingTempreture(float);
     private:
