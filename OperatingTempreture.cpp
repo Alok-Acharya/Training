@@ -6,6 +6,11 @@ OperatingTempreture::OperatingTempreture()
 	enviornmentfailure = new EnviornmentFailure();
 }
 
+OperatingTempreture::OperatingTempreture(const OperatingTempreture& obj)
+{
+     enviornmentfailure = new EnviornmentFailure();
+}
+
 OperatingTempreture::~OperatingTempreture()
 {
 	delete enviornmentfailure;
