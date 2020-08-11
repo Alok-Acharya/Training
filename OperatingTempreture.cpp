@@ -16,6 +16,10 @@ OperatingTempreture::~OperatingTempreture()
 	delete enviornmentfailure;
 }
 
+void OperatingTempreture::handleOperatingTempretureUpdate(float tempreture)
+{
+	validateOperatingTempreture(tempreture);
+}
 
 bool OperatingTempreture::validateOperatingTempreture(float tempreture)
 {
