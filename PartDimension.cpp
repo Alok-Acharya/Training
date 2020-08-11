@@ -2,19 +2,17 @@
 
 PartDimension::PartDimension()
 {
-  machinefailure = new MachineFailure();
- 	validatePartDimension = new IValidator();
+      machinefailure = new MachineFailure();
 }
 
 PartDimension::~PartDimension()
 {
-	delete machinefailure;
-	delete validatePartDimension;
+      delete machinefailure;
 }
 		 
 bool PartDimension::validatePartDimensionVariation(float dimensionVariation)
-{	
-	if(validatePartDimension->IsDataOK(dimensionVariation, Part_Dimension_Variation_Threshold))
+{	IValidator validatePartDimension;
+	if(validatePartDimension.IsDataOK(dimensionVariation, Part_Dimension_Variation_Threshold))
 	{	
 	    	return true;
 	}
