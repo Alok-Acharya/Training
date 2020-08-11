@@ -14,7 +14,7 @@ OperatingTempreture::~OperatingTempreture()
 
 bool OperatingTempreture::validateOperatingTempreture(float tempreture)
 {
-	    IValidator validatetempreture
+	    IValidator validatetempreture;
 	    if(validatetempreture.IsDataOK(tempreture, Operating_Tempreture_Threshold))
 	    {	
 	    	return true;
