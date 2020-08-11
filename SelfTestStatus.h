@@ -20,6 +20,7 @@ class SelfTestStatus
 	SelfTestStatus();
 	SelfTestStatus(const SelfTestStatus& );
         virtual ~SelfTestStatus();
+	void handleSelfTestStatusCodeUpdate(float);
 	bool ValidateStatusCode(float);
     private:
 	INotify *machinefailure;
