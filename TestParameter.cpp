@@ -1,12 +1,14 @@
-#include "OperatingTempreture.h"
-#include  "PartDimension.h"
-#include  "OperationDuration.h"
-#include "SelfTestStatus.h"
+
+#include "CNCTempretureMonitor.h"
 #include  <gtest/gtest.h>
  
+CNCMachineHealth _health;
 TEST(OperatingTempreture , input_valid) { 
-    OperatingTempreture  tempreture;
-    ASSERT_EQ(true, tempreture.validateOperatingTempreture(30.2));
+    IValidator _validate;
+    EnviornmentFailure _notify;
+    CNCTempretureMonitor *CNCTemp = new CNCTempretureMonitor(&_validate,&_notify , &_health);
+    CNCTemp->OperatingTempretureUpdate(30.2);
+    ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
  
 TEST(OperatingTempreture , input_equal) { 
@@ -14,7 +16,7 @@ TEST(OperatingTempreture , input_equal) {
     ASSERT_EQ(true, tempreture.validateOperatingTempreture(35.0));
 }
 
-TEST(OperatingTempreture , input_invalid) { 
+/*TEST(OperatingTempreture , input_invalid) { 
     OperatingTempreture tempreture;
     ASSERT_EQ(false, tempreture.validateOperatingTempreture(35.9));
 }
@@ -60,7 +62,7 @@ TEST(SelfTestStatus, input_valid) {
 TEST(SelfTestStatus, input_invalid) { 
      SelfTestStatus selfteststatus;
     ASSERT_EQ(false, selfteststatus.ValidateStatusCode(0x02));
-}
+}*/
 
  
 int main(int argc, char **argv) {
