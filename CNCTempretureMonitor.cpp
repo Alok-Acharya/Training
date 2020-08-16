@@ -1,11 +1,9 @@
 #include "CNCTempretureMonitor.h"
 
-CNCTempretureMonitor::CNCTempretureMonitor(IValidator* validate, INotify* notify , CNCMachineHealth* health)
+CNCTempretureMonitor::CNCTempretureMonitor(IValidator* validate, INotify* notify , CNCMachineHealth* health):
+_validate(validate),_notify(notify),_cnchealth(health)
 {	
-		_validate = validate;
-		_notify = notify;
-		_cnchealth = health;
-		_tempreture = 0.0;
+	_tempreture = 0.0;
 };
 
 CNCTempretureMonitor::~CNCTempretureMonitor()
