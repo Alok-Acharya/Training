@@ -2,6 +2,8 @@
 #include "CNCTempretureMonitor.h"
 #include "CNCPartDimensionMonitor.h"
 #include "CNCOperationDurationMonitor.h"
+#include "CNCSelfTestStatusMonitor.h"
+#include "CNCSelfTestValidator.h"
 #include  <gtest/gtest.h>
  
 CNCMachineHealth _health;
@@ -80,15 +82,15 @@ TEST(OperationDuration, input_invalid) {
     ASSERT_EQ(CNC_Health::Machine_Failure, _health.GetCNCHealth());
 }
 
-/*TEST(SelfTestStatus, input_valid) { 
-     SelfTestStatus selfteststatus;
-    ASSERT_EQ(true, selfteststatus.ValidateStatusCode(0xFF));
+TEST(SelfTestStatus, input_valid) { 
+    MachineFailure _notify;
+    CNCSelfTestValidator *selfTestValidator = new CNCSelfTestValidator(&_notify);
+    CNCSelfTestStatusMonitor *CNCSelfStatus = new CNCSelfTestStatusMonitor(selfTestValidator,&_health);
+    CNCSelfStatus->SelftestStatusUpdate(0xff);
+    ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
  
-TEST(SelfTestStatus, input_invalid) { 
-     SelfTestStatus selfteststatus;
-    ASSERT_EQ(false, selfteststatus.ValidateStatusCode(0x02));
-}*/
+
 
  
 int main(int argc, char **argv) {
