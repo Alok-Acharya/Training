@@ -13,7 +13,7 @@ class CNCSelfTestStatusMonitor
 	CNCSelfTestStatusMonitor(CNCSelfTestValidator* , CNCMachineHealth* );
     virtual ~CNCSelfTestStatusMonitor();
 	void SelftestStatusUpdate(unsigned int );
-	CNC_StatusCode GetStatusCode();
+	unsigned int GetStatusCode();
     private:
 	unsigned int _statuscode;
 	CNCSelfTestValidator *_validator;
