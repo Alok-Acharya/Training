@@ -11,18 +11,24 @@ TEST(OperatingTempreture , input_valid) {
     ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
  
-/*TEST(OperatingTempreture , input_equal) { 
-    OperatingTempreture  tempreture;
-    ASSERT_EQ(true, tempreture.validateOperatingTempreture(35.0));
+TEST(OperatingTempreture , input_equal) { 
+    IValidator _validate;
+    EnviornmentFailure _notify;
+    CNCTempretureMonitor *CNCTemp = new CNCTempretureMonitor(&_validate,&_notify , &_health);
+    CNCTemp->OperatingTempretureUpdate(35.0);
+    ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
 
 TEST(OperatingTempreture , input_invalid) { 
-    OperatingTempreture tempreture;
-    ASSERT_EQ(false, tempreture.validateOperatingTempreture(35.9));
+    IValidator _validate;
+    EnviornmentFailure _notify;
+    CNCTempretureMonitor *CNCTemp = new CNCTempretureMonitor(&_validate,&_notify , &_health);
+    CNCTemp->OperatingTempretureUpdate(35.9);
+    ASSERT_EQ(CNC_Health::Enviornment_Failure, _health.GetCNCHealth());
 }
  
  
-TEST(PartDimension, input_valid) { 
+/*TEST(PartDimension, input_valid) { 
      PartDimension variaton;
     ASSERT_EQ(true, variaton.validatePartDimensionVariation(0.02));
 }
