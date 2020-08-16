@@ -30,7 +30,7 @@ void CNCOperationDurationMonitor::OperationDurationUpdate(float duration)
 	}
 }
 
-float OperationDurationUpdate::GetOperationDuraion()
+float CNCOperationDurationMonitor::GetOperationDuraion()
 {
 	return _durationinminute;
 }
