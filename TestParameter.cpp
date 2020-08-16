@@ -11,12 +11,12 @@ TEST(OperatingTempreture , input_valid) {
     ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
  
-TEST(OperatingTempreture , input_equal) { 
+/*TEST(OperatingTempreture , input_equal) { 
     OperatingTempreture  tempreture;
     ASSERT_EQ(true, tempreture.validateOperatingTempreture(35.0));
 }
 
-/*TEST(OperatingTempreture , input_invalid) { 
+TEST(OperatingTempreture , input_invalid) { 
     OperatingTempreture tempreture;
     ASSERT_EQ(false, tempreture.validateOperatingTempreture(35.9));
 }
