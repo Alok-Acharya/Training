@@ -1,37 +1,33 @@
-
 #include "CNCTempretureMonitor.h"
 
-CNCTempretureMonitor::CNCTempretureMonitor()
-{
-	enviornmentfailure = new EnviornmentFailure();
-}
-
-CNCTempretureMonitor::CNCTempretureMonitor(const CNCTempretureMonitor& obj)
-{
-     enviornmentfailure = new EnviornmentFailure();
-}
+CNCTempretureMonitor::CNCTempretureMonitor(IValidator* validate, INotify* notify , CNCMachineHealth* health)
+{	
+		_validate = validate;
+		_notify = notify;
+		_cnchealth = health;
+		_tempreture = 0.0;
+};
 
 CNCTempretureMonitor::~CNCTempretureMonitor()
 {
-	delete enviornmentfailure;
+
 }
 
-void CNCTempretureMonitor::handleOperatingTempretureUpdate(float tempreture)
+void CNCTempretureMonitor::OperatingTempretureUpdate(float operatingtempreture)
 {
-	validateOperatingTempreture(tempreture);
+	    _tempreture = operatingtempreture;
+		if(!(_validate->ValidateData(_tempreture,Operating_Tempreture_Threshold)))
+		{
+			_notify->Notification();
+			_cnchealth->updateCNCHealth(Enviornment_Failure);
+		}
+		else
+		{
+			_cnchealth->updateCNCHealth(NO_Failure);
+		}
 }
 
-bool CNCTempretureMonitor::validateOperatingTempreture(float tempreture)
+float CNCTempretureMonitor::GetOperatingTempretureUpdate()
 {
-	    IValidator validatetempreture;
-	    if(validatetempreture.IsDataOK(tempreture, Operating_Tempreture_Threshold))
-	    {	
-	    	return true;
-	    }
-	    else
-	    {
-		cout<<"Enviornment_Not_OK " <<endl;
-		enviornmentfailure->Notification();
-		 return false;
-	    }
+	return _tempreture;	
 }
