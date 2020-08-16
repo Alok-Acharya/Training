@@ -1,5 +1,6 @@
 
 #include "CNCTempretureMonitor.h"
+#include "CNCPartDimensionMonitor.h"
 #include  <gtest/gtest.h>
  
 CNCMachineHealth _health;
@@ -28,24 +29,33 @@ TEST(OperatingTempreture , input_invalid) {
 }
  
  
-/*TEST(PartDimension, input_valid) { 
-     PartDimension variaton;
-    ASSERT_EQ(true, variaton.validatePartDimensionVariation(0.02));
+TEST(PartDimension, input_valid) { 
+    IValidator _validate;
+    MachineFailureNotification _notify;
+    CNCPartDimensionMonitor *CNCPart = new CNCPartDimensionMonitor(&_validate,&_notify , &_health);
+    CNCPart->PartDimensionVariationUpdate(0.02);
+    ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
 
  
 TEST(PartDimension, input_equal) { 
-     PartDimension variaton;
-    ASSERT_EQ(true, variaton.validatePartDimensionVariation(0.05));
+    IValidator _validate;
+    MachineFailureNotification _notify;
+    CNCPartDimensionMonitor *CNCPart = new CNCPartDimensionMonitor(&_validate,&_notify , &_health);
+    CNCPart->PartDimensionVariationUpdate(0.05);
+   ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
 
  
 TEST(PartDimension, input_) { 
-     PartDimension variaton;
-    ASSERT_EQ(false, variaton.validatePartDimensionVariation(0.5));
+    IValidator _validate;
+    MachineFailureNotification _notify;
+    CNCPartDimensionMonitor *CNCPart = new CNCPartDimensionMonitor(&_validate,&_notify , &_health);
+    CNCPart->PartDimensionVariationUpdate(0.5);
+    ASSERT_EQ(CNC_Health::Machine_Failure, _health.GetCNCHealth());
 }
 
-TEST(OperationDuration, input_valid) { 
+/*TEST(OperationDuration, input_valid) { 
     OperationDuration duration;
     ASSERT_EQ(true, duration.checkContineousOperationDuration(0.02));
 }
