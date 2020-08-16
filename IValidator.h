@@ -5,7 +5,7 @@ class IValidator
   public:
 	IValidator(){};
 	virtual ~IValidator(){};
-	bool IsDataOK(float data , float threshold)
+	bool ValidateData(float data , float threshold)
 	{
 		return (!(data > threshold));
 	}
