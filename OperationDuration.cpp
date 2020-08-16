@@ -20,7 +20,7 @@ void OperationDuration::handleOperationDurationUpdate(float duration)
 bool OperationDuration::checkContineousOperationDuration(float duration)
 {
 	IValidator validateDuration;
-	if(validateDuration.IsDataOK( duration, Operation_Duration_Threshold))
+	if(validateDuration.ValidateData( duration, Operation_Duration_Threshold))
 	 {	
 	    	return true;
 	 }
