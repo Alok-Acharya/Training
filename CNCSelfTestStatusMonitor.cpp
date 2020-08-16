@@ -27,7 +27,7 @@ void CNCSelfTestStatusMonitor::SelftestStatusUpdate(unsigned int code)
 
 
 
-CNC_StatusCode CNCSelfTestStatusMonitor::GetStatusCode()
+unsigned int  CNCSelfTestStatusMonitor::GetStatusCode()
 {
 	return _statuscode;
 }
