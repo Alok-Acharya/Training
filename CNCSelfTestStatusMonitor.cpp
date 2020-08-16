@@ -15,9 +15,9 @@ CNCSelfTestStatusMonitor::~CNCSelfTestStatusMonitor()
 void CNCSelfTestStatusMonitor::SelftestStatusUpdate(unsigned int code)
 {	
 	_statuscode = code;
-	if((_validator->validate(code)))
+	if(!(_validator->validate(code)))
 	{
-		_cnchealth->updateCNCHealth(Machine_Failure);
+		_cnchealth->updateCNCHealth(DIGNOSIS_Failure);
 	}
 	else
 	{
