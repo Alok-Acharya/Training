@@ -1,6 +1,5 @@
-#ifndef _OPERATINGH_TEMPRETURE_H_
-#define _OPERATINGH_TEMPRETURE_H_
-
+#ifndef _CNC_TEMPRETURE_MONITOR_H_
+#define _CNC_TEMPRETURE_MONITOR_H_
 #define Operating_Tempreture_Threshold 35 //in degree
 
 #include<iostream>
@@ -10,12 +9,12 @@ using namespace std;
 
 
 
-class OperatingTempreture
+class CNCTempretureMonitor
 {
     public:
-	OperatingTempreture();
-	OperatingTempreture(const OperatingTempreture&);
-        virtual ~OperatingTempreture();
+	CNCTempretureMonitor();
+	CNCTempretureMonitor(const CNCTempretureMonitor&);
+        virtual ~CNCTempretureMonitor();
 	void handleOperatingTempretureUpdate(float);
 	bool validateOperatingTempreture(float);
     private:
