@@ -1,6 +1,7 @@
 
 #include "CNCTempretureMonitor.h"
 #include "CNCPartDimensionMonitor.h"
+#include "CNCOperationDurationMonitor.h"
 #include  <gtest/gtest.h>
  
 CNCMachineHealth _health;
@@ -55,22 +56,31 @@ TEST(PartDimension, input_invalid) {
     ASSERT_EQ(CNC_Health::Machine_Failure, _health.GetCNCHealth());
 }
 
-/*TEST(OperationDuration, input_valid) { 
-    OperationDuration duration;
-    ASSERT_EQ(true, duration.checkContineousOperationDuration(0.02));
+TEST(OperationDuration, input_valid) { 
+    IValidator _validate;
+    MachineFailure _notify;
+    CNCOperationDurationMonitor *CNCduration = new CNCOperationDurationMonitor(&_validate,&_notify , &_health);
+    CNCduration->OperationDurationUpdate(200);
+    ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
 
 TEST(OperationDuration, input_equal) { 
-     OperationDuration duration;
-    ASSERT_EQ(true, duration.checkContineousOperationDuration(6.0));
+    IValidator _validate;
+    MachineFailure _notify;
+    CNCOperationDurationMonitor *CNCduration = new CNCOperationDurationMonitor(&_validate,&_notify , &_health);
+    CNCduration->OperationDurationUpdate(360);
+   ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
 
 TEST(OperationDuration, input_invalid) { 
-     OperationDuration duration;
-    ASSERT_EQ(false, duration.checkContineousOperationDuration(7));
+    IValidator _validate;
+    MachineFailure _notify;
+    CNCOperationDurationMonitor *CNCduration = new CNCOperationDurationMonitor(&_validate,&_notify , &_health);
+      CNCduration->OperationDurationUpdate(390);
+    ASSERT_EQ(CNC_Health::Machine_Failure, _health.GetCNCHealth());
 }
 
-TEST(SelfTestStatus, input_valid) { 
+/*TEST(SelfTestStatus, input_valid) { 
      SelfTestStatus selfteststatus;
     ASSERT_EQ(true, selfteststatus.ValidateStatusCode(0xFF));
 }
