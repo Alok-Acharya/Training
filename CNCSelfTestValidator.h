@@ -10,7 +10,7 @@ using namespace std;
 class CNCSelfTestValidator
 {
     public:
-	CNCSelfTestValidator(INotify*);
+	explicit CNCSelfTestValidator(INotify*);
     virtual ~CNCSelfTestValidator();
 	bool validate(unsigned int);
 	private:
