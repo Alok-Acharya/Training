@@ -47,7 +47,7 @@ TEST(PartDimension, input_equal) {
 }
 
  
-TEST(PartDimension, input_) { 
+TEST(PartDimension, input_invalid) { 
     IValidator _validate;
     MachineFailureNotification _notify;
     CNCPartDimensionMonitor *CNCPart = new CNCPartDimensionMonitor(&_validate,&_notify , &_health);
