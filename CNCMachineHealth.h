@@ -12,7 +12,7 @@ class CNCMachineHealth
 	CNCMachineHealth();
     	virtual ~CNCMachineHealth();
 	void  updateCNCHealth(CNC_Health _health);
-	CNC_Health GetCNCHealth()
+	CNC_Health GetCNCHealth();
     private:
 	 CNC_Health _cncCondition;
 
