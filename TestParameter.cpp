@@ -90,7 +90,7 @@ TEST(SelfTestStatus, input_valid) {
     ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
  
-TEST(SelfTestStatus, input_valid) { 
+TEST(SelfTestStatus, input_invalid) { 
     DignosisFailure _notify;
     CNCSelfTestValidator *selfTestValidator = new CNCSelfTestValidator(&_notify);
     CNCSelfTestStatusMonitor *CNCSelfStatus = new CNCSelfTestStatusMonitor(selfTestValidator,&_health);
