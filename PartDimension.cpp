@@ -16,7 +16,7 @@ void PartDimension::handlePartDimensionVariationUpdate(float dimensionvariation)
 
 bool PartDimension::validatePartDimensionVariation(float dimensionVariation)
 {	IValidator validatePartDimension;
-	if(validatePartDimension.IsDataOK(dimensionVariation, Part_Dimension_Variation_Threshold))
+	if(validatePartDimension.ValidateData(dimensionVariation, Part_Dimension_Variation_Threshold))
 	{	
 	    	return true;
 	}
