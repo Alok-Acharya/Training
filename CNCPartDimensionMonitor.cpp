@@ -1,6 +1,6 @@
 #include "CNCPartDimensionMonitor.h"
 
-CNCPartDimensionMonitor::CNCPartDimensionMonitor()
+CNCPartDimensionMonitor::CNCPartDimensionMonitor(IValidator* validate, INotify* notify , CNCMachineHealth* health)
 {
 	_validate = validate;
 	_notify = notify;
