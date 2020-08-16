@@ -31,7 +31,7 @@ TEST(OperatingTempreture , input_invalid) {
  
 TEST(PartDimension, input_valid) { 
     IValidator _validate;
-    MachineFailureNotification _notify;
+    MachineFailure _notify;
     CNCPartDimensionMonitor *CNCPart = new CNCPartDimensionMonitor(&_validate,&_notify , &_health);
     CNCPart->PartDimensionVariationUpdate(0.02);
     ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
@@ -40,7 +40,7 @@ TEST(PartDimension, input_valid) {
  
 TEST(PartDimension, input_equal) { 
     IValidator _validate;
-    MachineFailureNotification _notify;
+    MachineFailure _notify;
     CNCPartDimensionMonitor *CNCPart = new CNCPartDimensionMonitor(&_validate,&_notify , &_health);
     CNCPart->PartDimensionVariationUpdate(0.05);
    ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
@@ -49,7 +49,7 @@ TEST(PartDimension, input_equal) {
  
 TEST(PartDimension, input_invalid) { 
     IValidator _validate;
-    MachineFailureNotification _notify;
+    MachineFailure _notify;
     CNCPartDimensionMonitor *CNCPart = new CNCPartDimensionMonitor(&_validate,&_notify , &_health);
     CNCPart->PartDimensionVariationUpdate(0.5);
     ASSERT_EQ(CNC_Health::Machine_Failure, _health.GetCNCHealth());
