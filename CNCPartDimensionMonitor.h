@@ -15,7 +15,7 @@ class CNCPartDimensionMonitor
     public:
 	CNCPartDimensionMonitor(IValidator* , INotify* , CNCMachineHealth*);
         virtual ~CNCPartDimensionMonitor();
-	void CNCPartDimensionMonitor(float);
+	void PartDimensionVariationUpdate(float);
 	float GetPartDimensionVariation();
     private:
 	 float _dimVariation;
