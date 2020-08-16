@@ -13,7 +13,7 @@ CNCPartDimensionMonitor::~CNCPartDimensionMonitor()
 
 }
 
-void CNCPartDimensionMonitor::CNCPartDimensionMonitor(float variation)
+void CNCPartDimensionMonitor::PartDimensionVariationUpdate(float variation)
 {
 	_dimVariation = variation;
     if(!(_validate->ValidateData(_tempreture,Operating_Tempreture_Threshold)))
