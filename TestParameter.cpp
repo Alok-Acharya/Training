@@ -83,13 +83,20 @@ TEST(OperationDuration, input_invalid) {
 }
 
 TEST(SelfTestStatus, input_valid) { 
-    MachineFailure _notify;
+    DignosisFailure _notify;
     CNCSelfTestValidator *selfTestValidator = new CNCSelfTestValidator(&_notify);
     CNCSelfTestStatusMonitor *CNCSelfStatus = new CNCSelfTestStatusMonitor(selfTestValidator,&_health);
     CNCSelfStatus->SelftestStatusUpdate(0xff);
     ASSERT_EQ(CNC_Health::NO_Failure, _health.GetCNCHealth());
 }
  
+TEST(SelfTestStatus, input_valid) { 
+    DignosisFailure _notify;
+    CNCSelfTestValidator *selfTestValidator = new CNCSelfTestValidator(&_notify);
+    CNCSelfTestStatusMonitor *CNCSelfStatus = new CNCSelfTestStatusMonitor(selfTestValidator,&_health);
+    CNCSelfStatus->SelftestStatusUpdate(0x02);
+    ASSERT_EQ(CNC_Health::DIGNOSIS_Failure, _health.GetCNCHealth());
+}
 
 
  
