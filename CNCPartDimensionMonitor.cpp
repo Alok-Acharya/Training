@@ -16,7 +16,7 @@ CNCPartDimensionMonitor::~CNCPartDimensionMonitor()
 void CNCPartDimensionMonitor::PartDimensionVariationUpdate(float variation)
 {
 	_dimVariation = variation;
-    if(!(_validate->ValidateData(_tempreture,Operating_Tempreture_Threshold)))
+   	 if(!(_validate->ValidateData(_dimVariation,Part_Dimension_Variation_Threshold)))
 	{
 		_notify->Notification();
 		_cnchealth->updateCNCHealth(Machine_Failure);
