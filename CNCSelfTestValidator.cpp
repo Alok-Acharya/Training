@@ -21,7 +21,7 @@ bool CNCSelfTestValidator::validate(unsigned int code)
 	else
 	{
 		_notify->Notification();
-		return true;
+		return false;
 	}
 	
 }
