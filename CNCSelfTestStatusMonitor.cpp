@@ -11,7 +11,7 @@ CNCSelfTestStatusMonitor::~CNCSelfTestStatusMonitor()
 
 }
 
-void SelftestStatusUpdate(unsigned int code)
+void CNCSelfTestStatusMonitor::SelftestStatusUpdate(unsigned int code)
 {	
 	_statuscode = code;
 	if((_validator->validate(code)))
