@@ -1,5 +1,5 @@
 
-#include "OperatingTempreture.h"
+#include "CNCTempretureMonitor.h"
 
 CNCTempretureMonitor::CNCTempretureMonitor()
 {
