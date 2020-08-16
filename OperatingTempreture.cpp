@@ -1,27 +1,27 @@
 
 #include "OperatingTempreture.h"
 
-OperatingTempreture::OperatingTempreture()
+CNCTempretureMonitor::CNCTempretureMonitor()
 {
 	enviornmentfailure = new EnviornmentFailure();
 }
 
-OperatingTempreture::OperatingTempreture(const OperatingTempreture& obj)
+CNCTempretureMonitor::CNCTempretureMonitor(const CNCTempretureMonitor& obj)
 {
      enviornmentfailure = new EnviornmentFailure();
 }
 
-OperatingTempreture::~OperatingTempreture()
+CNCTempretureMonitor::~CNCTempretureMonitor()
 {
 	delete enviornmentfailure;
 }
 
-void OperatingTempreture::handleOperatingTempretureUpdate(float tempreture)
+void CNCTempretureMonitor::handleOperatingTempretureUpdate(float tempreture)
 {
 	validateOperatingTempreture(tempreture);
 }
 
-bool OperatingTempreture::validateOperatingTempreture(float tempreture)
+bool CNCTempretureMonitor::validateOperatingTempreture(float tempreture)
 {
 	    IValidator validatetempreture;
 	    if(validatetempreture.IsDataOK(tempreture, Operating_Tempreture_Threshold))
