@@ -3,6 +3,7 @@ CNCSelfTestStatusMonitor::CNCSelfTestStatusMonitor(CNCSelfTestValidator* validat
 {
 	_validator = validator;
 	_cnchealth = health;
+	_statuscode = 0xFF;
 }
 
 
@@ -26,7 +27,7 @@ void CNCSelfTestStatusMonitor::SelftestStatusUpdate(unsigned int code)
 
 
 
-CNC_StatusCode SelftestStatusUpdate::GetStatusCode()
+CNC_StatusCode CNCSelfTestStatusMonitor::GetStatusCode()
 {
 	return _statuscode;
 }
