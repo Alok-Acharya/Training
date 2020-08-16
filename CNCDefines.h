@@ -2,7 +2,7 @@
 #define _CNC_DEFINES_H_
 
 #define Operating_Tempreture_Threshold 35 //in degree
-#define Operation_Duration_Threshold 6 //in hours
+#define Operation_Duration_Threshold 360 //in minute
 #define Part_Dimension_Variation_Threshold 0.05 //in mm
 
 enum CNC_StatusCode
