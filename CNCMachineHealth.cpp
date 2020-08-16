@@ -1,8 +1,7 @@
 #include "CNCMachineHealth.h"
 
-CNCMachineHealth::CNCMachineHealth()
+CNCMachineHealth::CNCMachineHealth():_cncCondition(NO_Failure)
 {
-	_cncCondition = NO_Failure;
 }
 
 CNCMachineHealth::~CNCMachineHealth()
